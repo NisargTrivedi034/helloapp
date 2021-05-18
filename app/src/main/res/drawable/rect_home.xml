@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item><!-- Edit hex colors as you like -->
+        <shape android:shape="rectangle" >
+            <gradient
+                android:angle="180"
+                android:endColor="#FBAD00"
+                android:centerColor="#F78239"
+                android:startColor="#F03974" />
+
+            <corners android:radius="@dimen/_5sdp"></corners>
+            <stroke android:color="@color/home_menu_selected_circle_border_color" android:width="@dimen/_1sdp"></stroke>
+        </shape>
+
+    </item></layer-list>

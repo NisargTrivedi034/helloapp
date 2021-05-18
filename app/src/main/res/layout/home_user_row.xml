@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:gravity="center"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/_60sdp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:layout_centerHorizontal="true"
+        android:id="@+id/imgUser"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"></com.facebook.drawee.view.SimpleDraweeView>
+    <ImageView
+        android:id="@+id/imgAddStory"
+        android:scaleType="center"
+        android:translationZ="@dimen/_10sdp"
+        android:layout_marginLeft="-20dp"
+        android:layout_alignBottom="@id/imgUser"
+        android:layout_toEndOf="@id/imgUser"
+        android:src="@drawable/ic_add_story"
+        android:layout_width="@dimen/_32sdp"
+        android:layout_height="@dimen/_22sdp"></ImageView>
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:fontFamily="@font/popins_regular"
+        android:text="Saniya"
+        android:textColor="@color/home_color_users"
+        android:gravity="center"
+        android:layout_below="@id/imgUser"
+        android:textSize="@dimen/_10ssp"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="wrap_content" />
+</RelativeLayout>

@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <!--first of all you have to change
+        the layout as CoordinatorLayout.
+        This is the first thing we need to do.-->
+    <RelativeLayout
+        android:background="@color/home_back_color"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_above="@id/rlBottom"
+            android:background="@color/home_back_color"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!--AppBarLayout helps the toolbar and other components to react on
+                scroll changes. I am using Dark theme for AppBarLayout.
+                Inside this AppBarLayout i
+                have used CollapsingToolbarLayout. -->
+            <com.google.android.material.appbar.AppBarLayout
+                android:background="@drawable/home_top"
+                android:id="@+id/appBarLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!-- In CollapsingToolbarLayout sompe important attributes are:
+                 i)  app:layout_scrollFlags which is used to specify how collapsing
+                     layout behaves when content is scrolled.I have used
+                     app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
+                     so it will scroll until it's is completely collapsed.
+                 ii) app:contentScrim="@color/green" that specifies the color
+                      of the collapsed toolbar -->
+                <com.google.android.material.appbar.CollapsingToolbarLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_scrollFlags="scroll|snap|exitUntilCollapsed">
+
+                    <!--We are adding the image that we have added earlier
+                          in the drawable folder.The attribute app:layout_collapseMode="parallax"
+                          causes the image to move when user scrolls at a specific ratio. -->
+                    <!--                <ImageView-->
+                    <!--                    android:layout_width="match_parent"-->
+                    <!--                    android:layout_height="250dp"-->
+                    <!--                    android:scaleType="centerCrop"-->
+                    <!--                    android:src="@drawable/ic_menu_four"-->
+                    <!--                    app:layout_collapseMode="parallax" />-->
+
+                    <RelativeLayout
+                        android:id="@+id/rl"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_122sdp">
+
+                        <RelativeLayout
+                            android:layout_above="@id/llMenu"
+                            android:layout_marginBottom="@dimen/_20sdp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <ImageView
+                                android:layout_marginLeft="@dimen/_20sdp"
+                                android:id="@+id/img_Menu"
+                                android:layout_alignParentLeft="true"
+                                android:layout_centerInParent="true"
+                                android:src="@drawable/ic_menu"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"></ImageView>
+                            <TextView
+                                android:layout_marginLeft="@dimen/_10sdp"
+                                android:layout_toRightOf="@id/img_Menu"
+                                android:layout_centerInParent="true"
+                                android:textColor="@color/white"
+                                android:fontFamily="@font/poppins_semibold"
+                                android:text="HELLO"
+                                android:textSize="@dimen/_15ssp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"></TextView>
+                            <ImageView
+                                android:layout_marginRight="@dimen/_14sdp"
+                                android:layout_centerInParent="true"
+                                android:layout_toLeftOf="@id/imgSearch"
+                                android:src="@drawable/ic_gk"
+                                android:layout_width="@dimen/_18sdp"
+                                android:layout_height="@dimen/_18sdp">
+
+                            </ImageView>
+                            <ImageView
+                                android:layout_toLeftOf="@id/imgUser"
+                                android:id="@+id/imgSearch"
+                                android:layout_centerInParent="true"
+                                android:layout_marginRight="@dimen/_14sdp"
+                                android:src="@drawable/ic_search"
+                                android:layout_width="@dimen/_18sdp"
+                                android:layout_height="@dimen/_18sdp">
+
+                            </ImageView>
+
+                            <ImageView
+                                android:id="@+id/imgUser"
+                                android:layout_centerInParent="true"
+                                android:layout_marginRight="@dimen/_20sdp"
+                                android:layout_alignParentRight="true"
+                                android:src="@drawable/circle_image"
+                                android:layout_width="@dimen/_24sdp"
+                                android:layout_height="@dimen/_24sdp">
+
+                            </ImageView>
+
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:id="@+id/llMenu"
+                            android:layout_marginBottom="@dimen/_10sdp"
+                            android:layout_marginRight="@dimen/_20sdp"
+                            android:layout_marginLeft="@dimen/_20sdp"
+                            android:layout_alignParentBottom="true"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_30sdp">
+
+                            <TextView
+                                android:textSize="@dimen/_10ssp"
+                                android:background="@drawable/round_border_white"
+                                android:gravity="center"
+                                android:textColor="@color/white"
+                                android:text="@string/home_video_store"
+                                android:fontFamily="@font/popins_regular"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent">
+
+                            </TextView>
+                            <TextView
+                                android:paddingRight="@dimen/_5sdp"
+                                android:paddingLeft="@dimen/_5sdp"
+                                android:textSize="@dimen/_10ssp"
+                                android:layout_marginRight="@dimen/_5sdp"
+                                android:layout_marginLeft="@dimen/_5sdp"
+                                android:background="@drawable/round_border_white"
+                                android:gravity="center"
+                                android:textColor="@color/white"
+                                android:text="@string/home_popular_feed"
+                                android:fontFamily="@font/popins_regular"
+                                android:layout_weight="1.2"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent">
+
+                            </TextView>
+                            <TextView
+                                android:textSize="@dimen/_10ssp"
+                                android:background="@drawable/round_border_white"
+                                android:gravity="center"
+                                android:textColor="@color/white"
+                                android:text="@string/home_explore"
+                                android:fontFamily="@font/popins_regular"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent">
+
+                            </TextView>
+                        </LinearLayout>
+
+
+                    </RelativeLayout>
+
+
+                    <!-- Thw attribute app:layout_collapseMode="pin" is set so that
+                         sticks to the top when the user scrolls the view up-->
+                    <androidx.appcompat.widget.Toolbar
+                        android:id="@+id/toolbar"
+                        android:elevation="0dp"
+                        android:background="@android:color/transparent"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        app:layout_collapseMode="pin" />
+
+                </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <!--Now add the NestedScollView-->
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <!--In textview we will be adding the text that i have
+                        added earlier in strings.xml file.This is simply the
+                        the content to be scrolled -->
+                    <!--            <TextView-->
+                    <!--                android:textColor="@color/black"-->
+                    <!--                android:fontFamily="@font/popins_regular"-->
+                    <!--                android:background="@color/home_back_color"-->
+                    <!--                android:layout_width="match_parent"-->
+                    <!--                android:layout_height="wrap_content"-->
+                    <!--                android:lineSpacingExtra="8sp"-->
+                    <!--                android:padding="16dp"-->
+                    <!--                android:text="@string/content"-->
+                    <!--                android:textSize="20sp" />-->
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:id="@+id/rvUsers"
+                        android:layout_below="@id/llTrends"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    </androidx.recyclerview.widget.RecyclerView>
+                    <LinearLayout
+                        android:layout_marginTop="@dimen/_13sdp"
+                        android:id="@+id/llTrends"
+                        android:orientation="horizontal"
+                        android:background="@drawable/rect_back_home"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_30sdp">
+
+                        <TextView
+                            android:paddingRight="@dimen/_6sdp"
+                            android:paddingLeft="@dimen/_6sdp"
+                            android:background="@drawable/rect_home"
+                            android:gravity="center"
+                            android:textColor="@color/home_menu_selected_circle_border_color"
+                            android:fontFamily="@font/popins_regular"
+                            android:text="Trending Hashtag"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent">
+
+                        </TextView>
+                        <TextView
+                            android:id="@+id/tvTag"
+                            android:layout_marginLeft="@dimen/_5sdp"
+                            android:gravity="center"
+                            android:textColor="@color/hashtag_color"
+                            android:fontFamily="@font/popins_regular"
+                            android:singleLine="true"
+                            android:ellipsize="marquee"
+                            android:fadingEdge="horizontal"
+                            android:marqueeRepeatLimit="marquee_forever"
+                            android:scrollHorizontally="true"
+                            android:text="#Trending Hashtag #Trending Hashtag #Trending Hashtag #Trending Hashtag #Trending Hashtag"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent">
+
+                        </TextView>
+                    </LinearLayout>
+                    <HorizontalScrollView
+                        android:id="@+id/hsMenuTwo"
+                        android:scrollbars="none"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_below="@id/rvUsers"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_38sdp">
+                        <LinearLayout
+                            android:gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp">
+                            <LinearLayout
+                                android:elevation="@dimen/_3sdp"
+                                android:background="@drawable/menu_back"
+                                android:layout_width="@dimen/_90sdp"
+                                android:layout_height="@dimen/_30sdp">
+
+                                <ImageView
+                                    android:scaleType="center"
+                                    android:src="@drawable/ic_popular"
+                                    android:background="@drawable/home_top_menu_one"
+                                    android:layout_width="@dimen/_40sdp"
+                                    android:layout_height="match_parent"></ImageView>
+
+                                <TextView
+                                    android:textSize="@dimen/_8ssp"
+                                    android:paddingLeft="@dimen/_5sdp"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:textColor="#717272"
+                                    android:gravity="center"
+                                    android:text="@string/popular"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent" />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_marginLeft="@dimen/_10ssp"
+                                android:elevation="@dimen/_3sdp"
+                                android:background="@drawable/menu_back"
+                                android:layout_width="@dimen/_90sdp"
+                                android:layout_height="@dimen/_30sdp">
+
+                                <ImageView
+                                    android:scaleType="center"
+                                    android:src="@drawable/ic_flow"
+                                    android:background="@drawable/home_top_menu_two"
+                                    android:layout_width="@dimen/_40sdp"
+                                    android:layout_height="match_parent"></ImageView>
+
+                                <TextView
+                                    android:textSize="@dimen/_8ssp"
+                                    android:paddingLeft="@dimen/_5sdp"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:textColor="#717272"
+                                    android:gravity="center"
+                                    android:text="@string/popular"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent" />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_marginLeft="@dimen/_10ssp"
+                                android:elevation="@dimen/_3sdp"
+                                android:background="@drawable/menu_back"
+                                android:layout_width="@dimen/_90sdp"
+                                android:layout_height="@dimen/_30sdp">
+
+                                <ImageView
+                                    android:scaleType="center"
+                                    android:src="@drawable/ic_news"
+                                    android:background="@drawable/home_top_menu_three"
+                                    android:layout_width="@dimen/_40sdp"
+                                    android:layout_height="match_parent"></ImageView>
+
+                                <TextView
+                                    android:textSize="@dimen/_8ssp"
+                                    android:paddingLeft="@dimen/_5sdp"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:textColor="#717272"
+                                    android:gravity="center"
+                                    android:text="@string/popular"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent" />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:elevation="@dimen/_3sdp"
+                                android:background="@drawable/menu_back"
+                                android:layout_marginLeft="@dimen/_10ssp"
+                                android:layout_marginRight="@dimen/_10sdp"
+                                android:layout_width="@dimen/_90sdp"
+                                android:layout_height="@dimen/_30sdp">
+
+                                <ImageView
+                                    android:scaleType="center"
+                                    android:src="@drawable/ic_flow"
+                                    android:background="@drawable/home_top_menu_four"
+                                    android:layout_width="@dimen/_40sdp"
+                                    android:layout_height="match_parent"></ImageView>
+
+                                <TextView
+                                    android:textSize="@dimen/_8ssp"
+                                    android:paddingLeft="@dimen/_5sdp"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:textColor="#717272"
+                                    android:gravity="center"
+                                    android:text="@string/popular"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </HorizontalScrollView>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:id="@+id/rvPost"
+                        android:layout_above="@id/rlBottom"
+                        android:layout_below="@id/hsMenuTwo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    </androidx.recyclerview.widget.RecyclerView>
+
+
+
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlBottom"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/bottom_menu_white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp">
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/img_one"
+                        android:elevation="@dimen/_6sdp"
+                        android:background="@drawable/selected_bottom_menu"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_menu_one_white"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp">
+                    </ImageView>
+                </LinearLayout>
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+
+
+
+                    <ImageView
+                        android:id="@+id/img_two"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_menu_two"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp">
+                    </ImageView>
+                </LinearLayout>
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+
+
+                    <ImageView
+                        android:id="@+id/img_three"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_menu_three"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp">
+                    </ImageView>
+                </LinearLayout>
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/img_four"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_menu_four"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp">
+                    </ImageView>
+                </LinearLayout>
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/img_five"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_menu_five"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp">
+                    </ImageView>
+
+
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</layout>

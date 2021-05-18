@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bg_post"
+    android:layout_margin="@dimen/_10sdp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/rl"
+        android:padding="@dimen/_10sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/imgUser"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp" />
+
+        <TextView
+            android:layout_marginTop="@dimen/_6sdp"
+            android:layout_toLeftOf="@id/imAddUsers"
+            android:paddingLeft="@dimen/_15sdp"
+            android:layout_toRightOf="@id/imgUser"
+            android:id="@+id/tvName"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Saniya"
+            android:singleLine="true"
+            android:textColor="#717272"
+            android:gravity="center|left"
+            android:textSize="@dimen/_12ssp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:layout_marginTop="@dimen/_9sdp"
+            android:id="@+id/imAddUsers"
+            android:layout_marginRight="-10dp"
+            android:layout_toLeftOf="@id/imgSettings"
+            android:scaleType="center"
+            android:src="@drawable/ic_add_users"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_20sdp"></ImageView>
+        <ImageView
+            android:layout_marginTop="@dimen/_6sdp"
+            android:layout_alignParentRight="true"
+            android:id="@+id/imgSettings"
+            android:scaleType="center"
+            android:src="@drawable/ic_settings"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_20sdp"></ImageView>
+        <TextView
+            android:layout_below="@id/tvName"
+            android:layout_toLeftOf="@id/imAddUsers"
+            android:paddingLeft="@dimen/_15sdp"
+            android:layout_toRightOf="@id/imgUser"
+            android:id="@+id/tvFolow"
+            android:fontFamily="@font/popins_regular"
+            android:text="follow me on hello application"
+            android:singleLine="true"
+            android:textColor="#717272"
+            android:gravity="center|left"
+            android:textSize="@dimen/_8ssp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_below="@id/tvFolow"
+            android:layout_toLeftOf="@id/imAddUsers"
+            android:paddingLeft="@dimen/_15sdp"
+            android:layout_toRightOf="@id/imgUser"
+            android:id="@+id/tvDate"
+            android:fontFamily="@font/popins_regular"
+            android:text="28 November 2020 at 10:45pm"
+            android:singleLine="true"
+            android:textColor="#717272"
+            android:gravity="center|left"
+            android:textSize="@dimen/_8ssp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_below="@id/tvDate"
+            android:paddingLeft="@dimen/_15sdp"
+            android:layout_toRightOf="@id/imgUser"
+            android:id="@+id/tvTags"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="#insta #model #likeforlike #followback #cute #beauty #comment #india"
+            android:textColor="#545454"
+            android:gravity="center|left"
+            android:textSize="@dimen/_8ssp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        app:actualImageScaleType="centerCrop"
+        app:roundedCornerRadius="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:id="@+id/imgPost"
+        android:layout_below="@id/rl"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_150sdp">
+
+    </com.facebook.drawee.view.SimpleDraweeView>
+</RelativeLayout>
