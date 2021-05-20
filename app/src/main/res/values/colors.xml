@@ -18,4 +18,17 @@
     <color name="hashtag_color">#717272</color>
     <color name="your_story_text_color">#717272</color>
     <color name="image_border">#E9E9E9</color>
+    <color name="splash_bg">#F7F7F7</color>
+
+<!--    TextColorGradient-->
+    <color name="start">#F03974</color>
+    <color name="middle">#F78239</color>
+    <color name="end">#FBAD00</color>
+    <color name="description_color_splash">#C5C9D1</color>
+    <color name="select_language_activity_color">#C5C9D1</color>
+    <array name="splashText">
+        <item>@color/end</item>
+        <item>@color/middle</item>
+        <item>@color/start</item>
+    </array>
 </resources>

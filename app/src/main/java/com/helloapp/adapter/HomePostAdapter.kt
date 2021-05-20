@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.facebook.drawee.generic.GenericDraweeHierarchyBuilder
 import com.facebook.drawee.generic.RoundingParams
@@ -67,12 +68,12 @@ class HomePostAdapter(context: Context, usersList: List<UserPost>) :
         )
         //holder.imgPost.setActualImageResource(R.drawable.nisarg)
         var imgURI = Uri.parse("https://miro.medium.com/fit/c/240/240/1*SF2VIRFshYt2etl6OhNm_Q.png");
-                holder.imgPost.setImageURI(imgURI);
-        holder.imgUser.setImageURI(imgURI);
+                holder.imgPost.setImageURI(imgURI,context);
+        holder.imgUser.setImageURI(imgURI,context);
 
 
 
-        val color: Int = context.getResources().getColor(R.color.image_border)
+        val color: Int = ContextCompat.getColor(context,R.color.image_border)
         val roundingParams2 = RoundingParams.fromCornersRadius(5f)
         roundingParams2.setBorder(color, 3.0f)
         roundingParams2.roundAsCircle = true

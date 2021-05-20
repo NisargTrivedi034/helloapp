@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.helloapp">
-
+<uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
     <application
+        android:usesCleartextTraffic="true"
         android:name=".application_main.HelloApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -13,7 +15,8 @@
         <activity android:name=".MainActivity">
 
         </activity>
-        <activity android:name=".activity.test">
+        <activity android:name=".activity.Splash_one">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,6 +25,12 @@
 
 
         </activity>
+        <activity android:name=".activity.Splash_two" android:screenOrientation="portrait"></activity>
+        <activity android:name=".activity.test" android:screenOrientation="portrait">
+
+
+        </activity>
+        <activity android:name=".activity.selectLenguage" android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

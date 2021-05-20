@@ -12,13 +12,16 @@ import javax.crypto.spec.SecretKeySpec;
 
 
 public class Crypto {
-
+    static {
+        System.loadLibrary("native-lib");
+    }
     public static native String key();
 
     public static String
     Decrypt(String text, Context context) throws Exception {
 
         String key = getOriginalURL(key(), context);
+//        String key = "https://api.dilhindustani.co/v4/";
 
 
         Cipher cipher = Cipher.getInstance
@@ -51,6 +54,8 @@ public class Crypto {
 
     public static String Encrypt(String text, Context context) throws Exception {
         String key = getOriginalURL(key(), context);
+        //String key ="4Uo0BLN+r/i74ysX93/x5g/8NU4F7Wq6M8yLZ1P7u6Y=]x0SKrz/eAp2dsU7cb1xrng==]xyXZQ0aIpSt+govSzC6h4A==";
+                //getOriginalURL(key(), context);
         //if(BuildConfig.DEBUG){
             Logger.e("Request:\n"+text);
         //}

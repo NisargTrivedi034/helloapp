@@ -22,6 +22,7 @@
                 Inside this AppBarLayout i
                 have used CollapsingToolbarLayout. -->
             <com.google.android.material.appbar.AppBarLayout
+                app:elevation="0dp"
                 android:background="@drawable/home_top"
                 android:id="@+id/appBarLayout"
                 android:layout_width="match_parent"
@@ -170,8 +171,6 @@
                          sticks to the top when the user scrolls the view up-->
                     <androidx.appcompat.widget.Toolbar
                         android:id="@+id/toolbar"
-                        android:elevation="0dp"
-                        android:background="@android:color/transparent"
                         android:layout_width="match_parent"
                         android:layout_height="?attr/actionBarSize"
                         app:layout_collapseMode="pin" />

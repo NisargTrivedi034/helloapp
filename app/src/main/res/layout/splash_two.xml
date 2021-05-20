@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<RelativeLayout
+    android:background="@color/splash_bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imgRight"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/right_side_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></ImageView>
+
+    <ImageView
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:layout_above="@id/text"
+        android:layout_centerHorizontal="true"
+        android:scaleType="centerInside"
+        android:src="@drawable/logo"
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="@dimen/_80sdp"></ImageView>
+
+    <TextView
+        android:fontFamily="@font/poppins_semibold"
+        android:id="@+id/text"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:layout_above="@id/rl"
+        android:gravity="center"
+        android:textColor="#C5C9D1"
+        android:text="@string/for_your_everyday_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></TextView>
+
+
+        <ImageView
+            android:id="@+id/rl"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:scaleType="fitCenter"
+            android:src="@drawable/s_one"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_270sdp"></ImageView>
+
+    <ImageView
+        android:id="@+id/imgLeft"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/splash_bottom_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></ImageView>
+
+    <com.cbr.gradienttextview.GradientTextView
+        android:visibility="invisible"
+        android:layout_below="@id/rl"
+        android:layout_above="@id/desc"
+        android:id="@+id/title"
+        android:fontFamily="@font/poppins_semibold"
+        app:gt_color_list="@array/splashText"
+        app:gt_gradient_direction="right"
+        android:textSize="@dimen/_15ssp"
+        android:gravity="center"
+        android:text="@string/splash_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </com.cbr.gradienttextview.GradientTextView>
+    <TextView
+        android:visibility="invisible"
+        android:layout_marginRight="@dimen/_30sdp"
+        android:layout_marginLeft="@dimen/_30sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:fontFamily="@font/poppins_semibold"
+        android:layout_above="@id/btnNext"
+        android:id="@+id/desc"
+        android:textColor="@color/description_color_splash"
+        android:textSize="@dimen/_10ssp"
+        android:gravity="center"
+        android:text="@string/for_your_everyday_status_nvideos_photos_animated_gif"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/btnNext"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:textSize="@dimen/_11ssp"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:text="@string/next"
+        android:fontFamily="@font/poppins_semibold"
+        android:background="@drawable/rect_home"
+        android:layout_width="@dimen/_60sdp"
+        android:layout_height="@dimen/_30sdp"></TextView>
+
+
+    <TextView
+        android:visibility="gone"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/btnStart"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:textSize="@dimen/_11ssp"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:text="Start"
+        android:fontFamily="@font/poppins_semibold"
+        android:background="@drawable/rect_home"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_30sdp"></TextView>
+
+    <com.cbr.gradienttextview.GradientTextView
+        android:id="@+id/btnSkip"
+        android:elevation="@dimen/_2sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:textSize="@dimen/_11ssp"
+        app:gt_color_list="@array/splashText"
+        app:gt_gradient_direction="right"
+        android:gravity="center"
+        android:text="Skip"
+        android:fontFamily="@font/poppins_semibold"
+        android:background="@drawable/rect_splash_white"
+        android:layout_width="@dimen/_60sdp"
+        android:layout_height="@dimen/_30sdp"></com.cbr.gradienttextview.GradientTextView>
+
+</RelativeLayout>
+</layout>

@@ -6,17 +6,14 @@ import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
 
-/**
- * Created by Bhavin on 01-Apr-17.
- */
 interface ApiInterface {
 
     //region main
 //    @GET("v1/dashboard/hello/setting")
 //    fun settingDP(): Observable<String>
 //
-//    @GET("json")
-//    fun splashCall() : Call<LocationResponse>
+    @POST("generalInfo/home")
+    fun homeCall(@Body req: RequestBody) : Call<String>
 //
 //    @POST("v1/em_user/em_hellosetting")
 //    fun settingN(@Body req: RequestBody): Observable<String>

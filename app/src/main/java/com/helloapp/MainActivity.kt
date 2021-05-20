@@ -43,21 +43,21 @@ class MainActivity : BaseActivity() {
         onClickListeners()
     }
     fun onClickListeners(){
-        binding.imgOne.setOnClickListener({
-            Utility.setSelectedMenu(Integer(1),binding.imgOne,binding.imgTwo,binding.imgThree,binding.imgFour,binding.imgFive)
-        })
-        binding.imgTwo.setOnClickListener({
-            Utility.setSelectedMenu(Integer(2),binding.imgOne,binding.imgTwo,binding.imgThree,binding.imgFour,binding.imgFive)
-        })
-        binding.imgThree.setOnClickListener({
-            Utility.setSelectedMenu(Integer(3),binding.imgOne,binding.imgTwo,binding.imgThree,binding.imgFour,binding.imgFive)
-        })
-        binding.imgFour.setOnClickListener({
-            Utility.setSelectedMenu(Integer(4),binding.imgOne,binding.imgTwo,binding.imgThree,binding.imgFour,binding.imgFive)
-        })
-        binding.imgFive.setOnClickListener({
-            Utility.setSelectedMenu(Integer(5),binding.imgOne,binding.imgTwo,binding.imgThree,binding.imgFour,binding.imgFive)
-        })
+        binding.imgOne.setOnClickListener {
+            Utility.setSelectedMenu(1, binding.imgOne, binding.imgTwo, binding.imgThree, binding.imgFour, binding.imgFive)
+        }
+        binding.imgTwo.setOnClickListener {
+            Utility.setSelectedMenu(2, binding.imgOne, binding.imgTwo, binding.imgThree, binding.imgFour, binding.imgFive)
+        }
+        binding.imgThree.setOnClickListener {
+            Utility.setSelectedMenu(3, binding.imgOne, binding.imgTwo, binding.imgThree, binding.imgFour, binding.imgFive)
+        }
+        binding.imgFour.setOnClickListener {
+            Utility.setSelectedMenu(4, binding.imgOne, binding.imgTwo, binding.imgThree, binding.imgFour, binding.imgFive)
+        }
+        binding.imgFive.setOnClickListener {
+            Utility.setSelectedMenu(5, binding.imgOne, binding.imgTwo, binding.imgThree, binding.imgFour, binding.imgFive)
+        }
     }
     fun loadData(){
         users = Users("Your Story")

@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitClient {
 
-    const val BASE_URL = "https://api.dilhindustani.co/"
+    const val BASE_URL = "https://api.dilhindustani.co/v4/"
 
 
     val retrofitClient : Retrofit.Builder by lazy {

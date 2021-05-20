@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.facebook.drawee.generic.GenericDraweeHierarchyBuilder
 import com.facebook.drawee.generic.RoundingParams
@@ -19,12 +20,9 @@ import com.helloapp.util.Utility
 class HomeUserStoryAdapter(context: Context, usersList: List<Users>) :
     RecyclerView.Adapter<HomeUserStoryAdapter.ViewHolder>() {
 
-    var usersList: List<Users>
-    var context:Context
-    init {
-        this.context =context
-        this.usersList= usersList
-    }
+    var usersList: List<Users> = usersList
+    var context:Context = context
+
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var tvName: TextView
         var imgAddStory : ImageView
@@ -44,11 +42,10 @@ class HomeUserStoryAdapter(context: Context, usersList: List<Users>) :
         val task: Users = usersList.get(position)
         if(position==0) {
             holder.imgAddStory.visibility = View.VISIBLE
-            //holder.imgUser.borderColor = Color.WHITE
             holder.tvName.setTypeface(Utility.getFontSemiBold(context))
-            holder.tvName.setTextColor(context.resources.getColor(R.color.your_story_text_color))
+            holder.tvName.setTextColor(ContextCompat.getColor(context,R.color.your_story_text_color))
 
-            val color: Int = context.getResources().getColor(R.color.white)
+            val color: Int = ContextCompat.getColor(context,R.color.white)
             val roundingParams = RoundingParams.fromCornersRadius(5f)
             roundingParams.setBorder(color, 1.0f)
             roundingParams.roundAsCircle = true
@@ -57,10 +54,10 @@ class HomeUserStoryAdapter(context: Context, usersList: List<Users>) :
 
         }else {
             holder.imgAddStory.visibility = View.GONE
-            holder.tvName.setTextColor(context.resources.getColor(R.color.home_color_users))
+            holder.tvName.setTextColor(ContextCompat.getColor(context,R.color.home_color_users))
             holder.tvName.setTypeface(Utility.getFontSemiBold(context))
 
-            val color: Int = context.getResources().getColor(R.color.home_user_back)
+            val color: Int = ContextCompat.getColor(context,R.color.home_user_back)
             val roundingParams = RoundingParams.fromCornersRadius(5f)
             roundingParams.setBorder(color, 3.0f)
             roundingParams.roundAsCircle = true
@@ -75,7 +72,7 @@ class HomeUserStoryAdapter(context: Context, usersList: List<Users>) :
 //        )
         //holder.imgPost.setActualImageResource(R.drawable.nisarg)
         var imgURI = Uri.parse("https://miro.medium.com/fit/c/240/240/1*SF2VIRFshYt2etl6OhNm_Q.png");
-        holder.imgUser.setImageURI(imgURI);
+        holder.imgUser.setImageURI(imgURI,context);
 
         holder.tvName.setText(task.userName)
     }

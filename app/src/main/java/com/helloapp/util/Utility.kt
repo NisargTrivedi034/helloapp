@@ -9,7 +9,7 @@ class Utility {
 
     companion object util {
         fun setSelectedMenu(
-            id: Integer,
+            id: Int,
             home1: ImageView,
             home2: ImageView,
             home3: ImageView,
@@ -17,7 +17,7 @@ class Utility {
             home5: ImageView
         ) {
             when (id) {
-                Integer(1) -> {
+                1 -> {
                     home1.setImageResource(R.drawable.ic_menu_one_white)
                     home1.setBackgroundResource(R.drawable.selected_bottom_menu)
 
@@ -34,7 +34,7 @@ class Utility {
                     home5.setBackgroundResource(0)
 
                 }
-                Integer(2) -> {
+                2 -> {
                     home1.setImageResource(R.drawable.ic_menu_one)
                     home1.setBackgroundResource(0)
                     home2.setImageResource(R.drawable.ic_menu_two_white)
@@ -51,7 +51,7 @@ class Utility {
 
 
                 }
-                Integer(3) -> {
+                3 -> {
                     home1.setImageResource(R.drawable.ic_menu_one)
                     home1.setBackgroundResource(0)
 
@@ -67,7 +67,7 @@ class Utility {
                     home5.setBackgroundResource(0)
 
                 }
-                Integer(4) -> {
+                4 -> {
                     home1.setImageResource(R.drawable.ic_menu_one)
                     home1.setBackgroundResource(0)
 
@@ -83,7 +83,7 @@ class Utility {
                     home5.setBackgroundResource(0)
 
                 }
-                Integer(5) -> {
+                5-> {
                     home1.setImageResource(R.drawable.ic_menu_one)
                     home1.setBackgroundResource(0)
 
